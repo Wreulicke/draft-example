@@ -6,6 +6,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "draft-js": "^0.9.1",
+    "eventemitter2": "^2.2.2",
     "medium-draft": "^0.4.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"

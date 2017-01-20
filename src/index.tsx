@@ -8,11 +8,12 @@ import {
   genKey,
   getDefaultKeyBinding,
   RichUtils,
+  CompositeDecorator,
 } from "draft-js"
 import * as React from "react"
 import { render } from "react-dom"
 import insertNewBlock from "./insertNewBlock"
-
+import Decorator from "./DecorationManager"
 type KeyboardEvent = React.KeyboardEvent<void>
 
 type State = {
@@ -21,8 +22,9 @@ type State = {
 export default class App extends React.Component<any, State> {
   constructor() {
     super()
+    const decorater = new CompositeDecorator([new Decorator(this)])
     this.state = {
-      editorState: EditorState.createEmpty(),
+      editorState: EditorState.createEmpty(decorater),
     }
   }
   onChange(editorState: EditorState) {

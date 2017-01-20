@@ -5,6 +5,7 @@
       true,
       "never"
     ],
+    "prefer-const": true,
     "object-literal-sort-keys": false,
     "no-require-imports": false,
     "no-var-requires": false,
@@ -17,6 +18,9 @@
     "member-access": [
       false
     ],
-    "arrow-parens": false
+    "arrow-parens": false,
+    "ordered-imports": [
+      false
+    ]
   }
 }
