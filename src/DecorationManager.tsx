@@ -7,7 +7,7 @@ interface DraftDecorator {
   component: Function
   props?: Object
 }
-class DecoratorComponent extends React.Component<any, any>{
+class DecoratorComponent extends React.Component<any, any> {
   componentWillMount() {
     this.state = { show: true }
     this.props.emitter.on(`hide:${this.props.parent.getKey()}`, this.observe)
@@ -62,7 +62,7 @@ class Decorator implements DraftDecorator {
   observe = (key: string, cb: () => void) => {
     this.observer.on(key, cb)
   }
-  dissmiss = (key: string) => {
+  dismiss = (key: string) => {
     this.observer.emit(`hide:${key}`)
   }
   component = ({children} = { children: [] }) => {
@@ -73,7 +73,7 @@ class Decorator implements DraftDecorator {
       parent={parent}
       type={type}
       emitter={this.observer}
-      onClick={() => this.dissmiss(parent.getKey())}>
+      onClick={() => this.dismiss(parent.getKey())}>
       {children}
     </DecoratorComponent>
   }
